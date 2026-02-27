@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changes/V1__init.yaml
+  - include:
+      file: db/changelog/changes/V2__seed_users.yaml

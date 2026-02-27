@@ -1,4 +1,4 @@
-package com.example.bankcards.transfer;
+package com.example.bankcards;
 
 import com.example.bankcards.entity.Card;
 import com.example.bankcards.entity.CardStatus;
@@ -25,7 +25,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
-@SpringBootTest
+@SpringBootTest(classes = BankRestApplication.class)
 class TransferServiceIT {
 
     @Container

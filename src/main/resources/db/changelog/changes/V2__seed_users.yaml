@@ -1,0 +1,31 @@
+# Начальные пользователи: admin, user — пароль password (BCrypt)
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bankcards
+      comment: Seed users admin and user (password = password)
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: admin
+              - column:
+                  name: password_hash
+                  value: $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy
+              - column:
+                  name: role
+                  value: ADMIN
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: username
+                  value: user
+              - column:
+                  name: password_hash
+                  value: $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy
+              - column:
+                  name: role
+                  value: USER

@@ -1,0 +1,2 @@
+# Maven Wrapper script must use LF on Linux (CI)
+mvnw text eol=lf

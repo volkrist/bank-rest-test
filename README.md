@@ -1,3 +1,5 @@
+[![CI](https://github.com/volkrist/bank-rest-test/actions/workflows/ci.yml/badge.svg)](https://github.com/volkrist/bank-rest-test/actions/workflows/ci.yml)
+
 # Bank Cards REST API
 
 ## Описание

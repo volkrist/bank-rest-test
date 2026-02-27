@@ -22,6 +22,9 @@ jobs:
           cache: maven
 
       # На GitHub-hosted runner Docker уже есть — Testcontainers поднимет PostgreSQL сам.
+      - name: Make mvnw executable
+        run: chmod +x mvnw
+
       - name: Run tests
         env:
           # если тесты/конфиг вдруг читают только из env — подстраховка

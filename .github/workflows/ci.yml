@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      # На GitHub-hosted runner Docker уже есть — Testcontainers поднимет PostgreSQL сам.
+      - name: Run tests
+        env:
+          # если тесты/конфиг вдруг читают только из env — подстраховка
+          CARD_ENCRYPTION_KEY: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+        run: ./mvnw -B test
